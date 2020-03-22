@@ -1,15 +1,15 @@
 const getNumberOfBars = async (): Promise<number> => {
-  const response = await fetch("https://nodejs-stooped-api-bhbp-8443-app-stooped-api.apps.us-east-1.starter.openshift-online.com/numberOfBars");
+  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars");
   return parseInt(await response.text());
 };
 
 const increment = async (): Promise<number> => {
-  const response = await fetch("https://nodejs-stooped-api-bhbp-8443-app-stooped-api.apps.us-east-1.starter.openshift-online.com/numberOfBars/inc");
+  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars/inc");
   return parseInt(await response.text());
 };
 
 const decrement = async (): Promise<number> => {
-  const response = await fetch("https://nodejs-stooped-api-bhbp-8443-app-stooped-api.apps.us-east-1.starter.openshift-online.com/numberOfBars/dec");
+  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars/dec");
   return parseInt(await response.text());
 };
 
