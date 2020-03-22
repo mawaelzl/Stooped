@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Stooped/static/css/main.7935b4f8.chunk.css",
+    "main.js": "/Stooped/static/js/main.47dfb637.chunk.js",
+    "main.js.map": "/Stooped/static/js/main.47dfb637.chunk.js.map",
+    "runtime-main.js": "/Stooped/static/js/runtime-main.f723afd5.js",
+    "runtime-main.js.map": "/Stooped/static/js/runtime-main.f723afd5.js.map",
+    "static/js/2.031e4b68.chunk.js": "/Stooped/static/js/2.031e4b68.chunk.js",
+    "static/js/2.031e4b68.chunk.js.map": "/Stooped/static/js/2.031e4b68.chunk.js.map",
+    "index.html": "/Stooped/index.html",
+    "precache-manifest.4a1cccd8271000b914e525b749a7bf4f.js": "/Stooped/precache-manifest.4a1cccd8271000b914e525b749a7bf4f.js",
+    "service-worker.js": "/Stooped/service-worker.js",
+    "static/css/main.7935b4f8.chunk.css.map": "/Stooped/static/css/main.7935b4f8.chunk.css.map",
+    "static/js/2.031e4b68.chunk.js.LICENSE.txt": "/Stooped/static/js/2.031e4b68.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f723afd5.js",
+    "static/js/2.031e4b68.chunk.js",
+    "static/css/main.7935b4f8.chunk.css",
+    "static/js/main.47dfb637.chunk.js"
+  ]
+}
