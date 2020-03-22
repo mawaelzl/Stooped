@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Stooped/static/css/main.7935b4f8.chunk.css",
-    "main.js": "/Stooped/static/js/main.79c707b6.chunk.js",
-    "main.js.map": "/Stooped/static/js/main.79c707b6.chunk.js.map",
+    "main.js": "/Stooped/static/js/main.93df6a8b.chunk.js",
+    "main.js.map": "/Stooped/static/js/main.93df6a8b.chunk.js.map",
     "runtime-main.js": "/Stooped/static/js/runtime-main.f723afd5.js",
     "runtime-main.js.map": "/Stooped/static/js/runtime-main.f723afd5.js.map",
     "static/js/2.031e4b68.chunk.js": "/Stooped/static/js/2.031e4b68.chunk.js",
     "static/js/2.031e4b68.chunk.js.map": "/Stooped/static/js/2.031e4b68.chunk.js.map",
     "index.html": "/Stooped/index.html",
-    "precache-manifest.96111fbe756635bb77833930e064158e.js": "/Stooped/precache-manifest.96111fbe756635bb77833930e064158e.js",
+    "precache-manifest.b4f141ea114e59d1af5153ca6ee48257.js": "/Stooped/precache-manifest.b4f141ea114e59d1af5153ca6ee48257.js",
     "service-worker.js": "/Stooped/service-worker.js",
     "static/css/main.7935b4f8.chunk.css.map": "/Stooped/static/css/main.7935b4f8.chunk.css.map",
     "static/js/2.031e4b68.chunk.js.LICENSE.txt": "/Stooped/static/js/2.031e4b68.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f723afd5.js",
     "static/js/2.031e4b68.chunk.js",
     "static/css/main.7935b4f8.chunk.css",
-    "static/js/main.79c707b6.chunk.js"
+    "static/js/main.93df6a8b.chunk.js"
   ]
 }
