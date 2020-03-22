@@ -32,11 +32,6 @@ export const BarDisplay: FC<BarDisplayProps> = () => {
   const { numberOfBars, decrement } = useContext(AppContext);
   const [bars, setBars] = useState<Array<JSX.Element>>([]);
 
-  const handleDelete = useCallback(() => {
-    setBars((prev: any) => prev.slice(0, -1));
-    decrement();
-  }, [decrement]);
-
   useEffect(() => {
     if (bars.length > 0) {
       const interval1 = setInterval(() => {
@@ -46,7 +41,7 @@ export const BarDisplay: FC<BarDisplayProps> = () => {
             top: document.body.scrollHeight,
             behavior: "smooth"
           });
-          bar.onclick = () => handleDelete();
+          bar.onclick = decrement;
           bar.style.cursor = "pointer";
           bar.style.pointerEvents = "all";
           clearInterval(interval1);
@@ -64,21 +59,20 @@ export const BarDisplay: FC<BarDisplayProps> = () => {
         }
       }, 5);
     }
-  }, [bars, handleDelete]);
-
+  }, [bars, decrement]);
   useEffect(() => {
-    setBars((prevState: any) => {
+    setBars((prevState: Array<JSX.Element>) => {
       let newBars = [...prevState];
 
       for (let i = prevState.length + 1; i <= numberOfBars; i++) {
         newBars = [...newBars, <Bar barNumber={i} key={i} />];
       }
-      for (let i = prevState.length; i > numberOfBars; i++) {
+      for (let i = prevState.length; i > numberOfBars; i--) {
         newBars = newBars.slice(0, -1);
       }
       return newBars;
     });
-  }, [handleDelete, numberOfBars]);
+  }, [numberOfBars]);
 
   return (
     <BarContainer>
