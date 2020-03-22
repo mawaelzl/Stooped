@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b5fdc5468451eb99173fb68b2f4ed96",
+    "revision": "c1c0533c5fe3e80d1c5daef247869882",
     "url": "/Stooped/index.html"
   },
   {
-    "revision": "e03267fe1ad83f621cbc",
+    "revision": "1585679beddbd5ac3837",
     "url": "/Stooped/static/css/main.7935b4f8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Stooped/static/js/2.031e4b68.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e03267fe1ad83f621cbc",
-    "url": "/Stooped/static/js/main.93df6a8b.chunk.js"
+    "revision": "1585679beddbd5ac3837",
+    "url": "/Stooped/static/js/main.d91ebe42.chunk.js"
   },
   {
     "revision": "c98ffe856c2a16761225",
