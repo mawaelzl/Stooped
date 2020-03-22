@@ -31,35 +31,7 @@ interface BarDisplayProps {}
 export const BarDisplay: FC<BarDisplayProps> = () => {
   const { numberOfBars, decrement } = useContext(AppContext);
   const [bars, setBars] = useState<Array<JSX.Element>>([]);
-
-  useEffect(() => {
-    if (bars.length > 0) {
-      const interval1 = setInterval(() => {
-        const bar = document.getElementById(`bar${bars.length}`);
-        if (bar) {
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-          });
-          bar.onclick = decrement;
-          bar.style.cursor = "pointer";
-          bar.style.pointerEvents = "all";
-          clearInterval(interval1);
-        }
-      }, 5);
-    }
-    if (bars.length > 1) {
-      const interval2 = setInterval(() => {
-        const prevBar = document.getElementById(`bar${bars.length - 1}`);
-        if (prevBar) {
-          prevBar.onclick = () => {};
-          prevBar.style.cursor = "auto";
-          prevBar.style.pointerEvents = "none";
-          clearInterval(interval2);
-        }
-      }, 5);
-    }
-  }, [bars, decrement]);
+  
   useEffect(() => {
     setBars((prevState: Array<JSX.Element>) => {
       let newBars = [...prevState];
@@ -70,9 +42,39 @@ export const BarDisplay: FC<BarDisplayProps> = () => {
       for (let i = prevState.length; i > numberOfBars; i--) {
         newBars = newBars.slice(0, -1);
       }
+
+      if (newBars.length > 0) {
+        const interval1 = setInterval(() => {
+          const bar = document.getElementById(`bar${newBars.length}`);
+          if (bar) {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth"
+            });
+            bar.onclick = decrement;
+            bar.style.cursor = "pointer";
+            bar.style.pointerEvents = "all";
+            clearInterval(interval1);
+          }
+        }, 5);
+      }
+      if (newBars.length > 1) {
+        const interval2 = setInterval(() => {
+          const prevBar = document.getElementById(`bar${newBars.length - 1}`);
+          if (prevBar) {
+            prevBar.onclick = () => {};
+            prevBar.style.cursor = "auto";
+            prevBar.style.pointerEvents = "none";
+            clearInterval(interval2);
+          }
+        }, 5);
+      }
+      
       return newBars;
     });
-  }, [numberOfBars]);
+    
+
+  }, [decrement, numberOfBars]);
 
   return (
     <BarContainer>
