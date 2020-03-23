@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { Bar } from "./Bar";
 import { AppContext } from "./AppContextProvider";
 import { BarBlock } from "./BarBlock";
@@ -28,15 +28,40 @@ const BarContainer = styled.div`
 
 interface BarDisplayProps {}
 
+const removeClick = (id: number) => {
+  const interval = setInterval(() => {
+    const bar = document.getElementById(`bar${id}`);
+    if (bar) {
+      bar.onclick = () => {};
+      bar.style.cursor = "auto";
+      bar.style.pointerEvents = "none";
+      clearInterval(interval);
+    }
+  }, 5);
+};
+
+const addClick = (id: number, onClick: () => void) => {
+  const interval = setInterval(() => {
+    const bar = document.getElementById(`bar${id}`);
+    if (bar) {
+      bar.onclick = onClick;
+      bar.style.cursor = "pointer";
+      bar.style.pointerEvents = "all";
+      clearInterval(interval);
+    }
+  }, 5);
+};
+
 export const BarDisplay: FC<BarDisplayProps> = () => {
   const { numberOfBars, decrement } = useContext(AppContext);
   const [bars, setBars] = useState<Array<JSX.Element>>([]);
-  
+
   useEffect(() => {
     setBars((prevState: Array<JSX.Element>) => {
       let newBars = [...prevState];
 
       for (let i = prevState.length + 1; i <= numberOfBars; i++) {
+        removeClick(newBars.length);
         newBars = [...newBars, <Bar barNumber={i} key={i} />];
       }
       for (let i = prevState.length; i > numberOfBars; i--) {
@@ -44,36 +69,16 @@ export const BarDisplay: FC<BarDisplayProps> = () => {
       }
 
       if (newBars.length > 0) {
-        const interval1 = setInterval(() => {
-          const bar = document.getElementById(`bar${newBars.length}`);
-          if (bar) {
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: "smooth"
-            });
-            bar.onclick = decrement;
-            bar.style.cursor = "pointer";
-            bar.style.pointerEvents = "all";
-            clearInterval(interval1);
-          }
-        }, 5);
+        addClick(newBars.length, decrement);
       }
-      if (newBars.length > 1) {
-        const interval2 = setInterval(() => {
-          const prevBar = document.getElementById(`bar${newBars.length - 1}`);
-          if (prevBar) {
-            prevBar.onclick = () => {};
-            prevBar.style.cursor = "auto";
-            prevBar.style.pointerEvents = "none";
-            clearInterval(interval2);
-          }
-        }, 5);
-      }
-      
+
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      });
+
       return newBars;
     });
-    
-
   }, [decrement, numberOfBars]);
 
   return (
