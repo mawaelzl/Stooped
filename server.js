@@ -8,7 +8,6 @@ MongoClient.connect(
   "mongodb://admin:password123@ds159546.mlab.com:59546/heroku_8w12nv6j",
   { useUnifiedTopology: true },
   function(err, client) {
-    console.log("starting");
     if (err) {
       throw err;
     }
