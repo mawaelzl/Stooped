@@ -34,7 +34,7 @@ MongoClient.connect(
     var app = express();
     app.use(bodyParser.json());
     app.use(cors());
-    app.use(express.static(path.join(__dirname, "client/build")));
+    app.use(express.static(path.join(__dirname, "frontend/build")));
 
     app.get("/numberOfBars", async function(req, res, next) {
       const numberOfBars = await getNumberOfBars();
