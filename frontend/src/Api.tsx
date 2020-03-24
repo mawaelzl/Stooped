@@ -1,15 +1,15 @@
 const getNumberOfBars = async (): Promise<number> => {
-  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars");
+  const response = await fetch("/numberOfBars");
   return parseInt(await response.text());
 };
 
 const increment = async (): Promise<number> => {
-  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars/inc");
+  const response = await fetch("/numberOfBars/inc");
   return parseInt(await response.text());
 };
 
 const decrement = async (): Promise<number> => {
-  const response = await fetch("https://stooped-api.herokuapp.com/numberOfBars/dec");
+  const response = await fetch("/numberOfBars/dec");
   return parseInt(await response.text());
 };
 
